@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Furgonet.Views.EditDirecciones" 
+             Title="Editar Dirección">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DarkGray">
+            
+            <Entry x:Name="nombresEntry" ReturnType="Next"
+                   Placeholder="Nombre Calle"/>
+
+            <Entry x:Name="numeroEntry" ReturnType="Next"
+                   Placeholder="Numero de Calle" Keyboard="Numeric" />
+
+            <Entry x:Name="ciudadEntry" ReturnType="Next"
+                   Placeholder="Ciudad" />
+            
+            <Entry x:Name="horarioEntry" ReturnType="Done"
+                   Placeholder="Ingrese Horario en este formato 08:00" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Activo: " VerticalOptions="Center" />
+                <Switch x:Name="activoSwitch" VerticalOptions="Center" 
+                        IsToggled="True" />
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="ActualizarButton" 
+                        TextColor="White" BorderRadius="30" BorderColor="White" 
+                        BorderWidth="2" BackgroundColor="Black"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center" 
+                        Text="Actualizar"/>
+                
+                <Button x:Name="BorrarButton" 
+                        TextColor="White" BorderRadius="30" BorderColor="Black" 
+                        BorderWidth="2" BackgroundColor="DarkRed"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center" 
+                        Text="Borrar"/>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Furgonet.Views.HorarioPages.HorarioEdit"
+             Title="Editar Horario">
+    
+    <StackLayout BackgroundColor="DarkGray">
+
+        <Entry x:Name="turnoEntry" ReturnType="Next" 
+               Placeholder="Ingrese Turno" />
+
+        <Entry x:Name="inicioEntry" ReturnType="Next"
+               Placeholder="Ingrese Hora de Inicio en este formato 08:00" />
+
+        <Entry x:Name="terminoEntry" ReturnType="Done"
+               Placeholder="Ingrese Hora de Termino en este formato 08:00" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="OFF/ON " VerticalOptions="Center" />
+            <Switch x:Name="activoSwitch" VerticalOptions="Center" 
+                    IsToggled="True" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="ActualizarButton"
+                Text="Actualizar" BackgroundColor="Black" TextColor="White" 
+                BorderRadius="30" BorderColor="White" BorderWidth="2" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+        
+            <Button x:Name="BorrarButton" 
+                Text="Eliminar" BackgroundColor="DarkRed" TextColor="White" 
+                BorderRadius="30" BorderColor="Black" BorderWidth="2" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+        </StackLayout>
+        
+    </StackLayout>
+</ContentPage>

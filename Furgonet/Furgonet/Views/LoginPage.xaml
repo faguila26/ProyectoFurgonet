@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Furgonet.Views.LoginPage" x:Name="loginPage" 
+             NavigationPage.HasNavigationBar="True"
+             Title="Login">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout 
+                BackgroundColor="DarkOrange">
+                
+                <Label FontAttributes="Bold" FontSize="Large"
+                       HorizontalOptions="Center"
+                       Text="Furgonet"
+                       TextColor="Black">
+                </Label>
+                
+                <Image Source="iconologin.png"
+                       WidthRequest="250" HeightRequest="250">
+                </Image>
+
+                <Label TextColor="Black" FontAttributes="Bold" Text="LOGIN" FontSize="20"/>
+                
+                <Entry x:Name="userNameEntry" ReturnType="Next" Placeholder="Correo" 
+                       FontSize="Medium" HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" />
+                
+                <Entry x:Name="passwordEntry" ReturnType="Done" IsPassword="True" 
+                       Placeholder="Contraseña" FontSize="Medium"  
+                       HorizontalOptions="CenterAndExpand" TextColor="Black" />
+
+                <Button x:Name="signUp" Clicked="LoginValidation_ButtonClicked" 
+                        TextColor="White" BorderRadius="30" BorderColor="White" 
+                        BorderWidth="2" VerticalOptions="Center" BackgroundColor="Black"
+                        HorizontalOptions="Center" WidthRequest="250" 
+                        HeightRequest="50" Text="Login"/>
+                
+                <Label x:Name="forgetLabel" Text="Olvidaste tu Contraseña?" TextColor="Black" 
+                       FontSize="15" BackgroundColor="Transparent" />
+                
+                <ContentView x:Name="popupLoadingView" BackgroundColor="White" 
+                             Padding="0, 0" 
+                             IsVisible="false">
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <StackLayout x:Name="stackIncrese1" Orientation="Vertical" HeightRequest="150" 
+                                     WidthRequest="300" BackgroundColor="White">
+                            <Label x:Name="labelenter" Text="Ingresa tu Correo" 
+                                   VerticalOptions="StartAndExpand" 
+                                   HorizontalOptions="FillAndExpand"></Label>
+                            <Entry x:Name="useridValidationEntry" Keyboard="Email" 
+                                   IsPassword="True" Placeholder="Ingresa Usuario" 
+                                   TextColor="Black" VerticalOptions="FillAndExpand" 
+                                   HorizontalOptions="FillAndExpand" ></Entry>
+
+                            <Button x:Name="UpdateButton" Clicked="UserIdCheckEvent" 
+                                    BackgroundColor="#ff6600-" Text="Check" 
+                                    HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ContentView>
+                <ContentView x:Name="passwordView" BackgroundColor="#C0808080" Padding="0, 0" IsVisible="false" 
+                             AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <StackLayout x:Name="stackIncrese" Orientation="Vertical" HeightRequest="180" 
+                                     WidthRequest="300" BackgroundColor="White">
+                            <Label x:Name="passwordLabel" Text="Password" VerticalOptions="StartAndExpand" 
+                                   HorizontalOptions="FillAndExpand">
+                            </Label>
+                            <Entry x:Name="firstPassword" ReturnType="Next" Keyboard="Email" 
+                                   IsPassword="True" Placeholder="Ingrese Contraseña Nueva" TextColor="Black" 
+                                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            </Entry>
+
+                            <Entry x:Name="secondPassword" ReturnType="Done" Keyboard="Email" 
+                                   IsPassword="True" Placeholder="Ingrese Contraseña de Nuevo" TextColor="Black" 
+                                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            </Entry>
+
+                            <Label x:Name="warningLabel" Text="" IsVisible="False" TextColor="Blue" 
+                                   FontSize="15" BackgroundColor="Transparent" />
+                            <Button x:Name="submitButton" Clicked="Password_ClickedEvent" BackgroundColor="Black" 
+                                    Text="Update" TextColor="White" HorizontalOptions="EndAndExpand" BorderRadius="30"
+                                    BorderColor="White" BorderWidth="2"
+                                    VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ContentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

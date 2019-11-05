@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Furgonet.Views.DireccionPage" Title="Direccion">
+    <ScrollView>
+        <StackLayout BackgroundColor="DarkGray">
+
+            <Entry x:Name="nombresEntry" ReturnType="Next"
+                   Placeholder="Nombre de Calle"/>
+
+            <Entry x:Name="numeroEntry" ReturnType="Next"
+                   Placeholder="Número de Dirección" Keyboard="Numeric"/>
+
+            <Entry x:Name="ciudadEntry" ReturnType="Next"
+                   Placeholder="Ciudad"/>
+
+            <Entry x:Name="horarioEntry" ReturnType="Done" TextColor="Black"
+                   Placeholder="Ingrese Hora en este Formato 08:00"/>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="OFF/ON" VerticalOptions="Center" TextColor="Black"/>
+                <Switch x:Name="activoSwitch" VerticalOptions="Center" IsToggled="True" />
+            </StackLayout>
+            <Button x:Name="AgregarButton" BorderRadius="30" BorderColor="White" 
+                    BorderWidth="2" VerticalOptions="Center" BackgroundColor="Black"
+                    HorizontalOptions="Center" WidthRequest="250" HeightRequest="50" 
+                    Text="Agregar" TextColor="White" />
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

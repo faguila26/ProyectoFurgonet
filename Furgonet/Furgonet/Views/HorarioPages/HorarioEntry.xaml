@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Furgonet.Views.HorarioPages.HorarioEntry"
+             Title="Horario">
+    
+    <StackLayout BackgroundColor="DarkGray">
+
+        <Entry x:Name="turnoEntry" ReturnType="Next"
+               Placeholder="Ingrese Turno" />
+
+        <Entry x:Name="inicioEntry" ReturnType="Next"
+               Placeholder="Hora de Inicio en este formato 08:00" />
+
+        <Entry x:Name="terminoEntry" ReturnType="Done"
+               Placeholder="Hora de Termino en este formato 08:00"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Activo: " VerticalOptions="Center" TextColor="Black"/>
+            <Switch x:Name="activoSwitch" VerticalOptions="Center" IsToggled="True" />
+        </StackLayout>
+        
+        <Button Text="Guardar" TextColor="White" BorderRadius="30" BorderColor="White" 
+                BorderWidth="2" BackgroundColor="Black" VerticalOptions="Center" 
+                HorizontalOptions="Center" WidthRequest="250" HeightRequest="50" 
+                Clicked="OnSaveButtonClicked" />
+    </StackLayout>
+</ContentPage>

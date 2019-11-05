@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Furgonet"
+             x:Class="Furgonet.Views.RegistrarPage" NavigationPage.HasNavigationBar="True"
+             Title="Registro">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="DarkOrange">
+
+                <Image Source="iconologin.png" HeightRequest="250" WidthRequest="250" 
+                       BackgroundColor="Transparent" />
+
+                <Entry x:Name="emailEntry" Placeholder="Ingrese Email" ReturnType="Next" 
+                       Keyboard="Email" FontSize="Medium" HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" >
+
+                    <Entry.Behaviors>
+                        <local:EmailValidationBehavior></local:EmailValidationBehavior>
+                    </Entry.Behaviors>
+
+                </Entry>
+                <Entry x:Name="userNameEntry" ReturnType="Next" MaxLength="10" 
+                       Placeholder="Nombre Usuario" FontSize="Medium" 
+                       HorizontalOptions="CenterAndExpand" TextColor="Black" Keyboard="Text" />
+
+                <Entry x:Name="passwordEntry" ReturnType="Next" MaxLength="12" 
+                       IsPassword="True" Placeholder="Contraseña" FontSize="Medium" 
+                       HorizontalOptions="CenterAndExpand"  
+                       TextColor="Black" />
+
+                <Entry x:Name="confirmpasswordEntry" ReturnType="Next" MaxLength="12" 
+                       IsPassword="True" Placeholder="Confirma Contraseña" FontSize="Medium" 
+                       HorizontalOptions="CenterAndExpand"  
+                       TextColor="Black" />
+
+                <Label x:Name="warningLabel" Text="" IsVisible="False" TextColor="Blue" 
+                       FontSize="15" BackgroundColor="Transparent" />
+
+                <Entry x:Name="phoneEntry" ReturnType="Done" MaxLength="10" 
+                       Keyboard="Telephone" Placeholder="Numero de Telefono" 
+                       FontSize="Medium" HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" >
+
+                    <Entry.Behaviors>
+                        <local:NumberValidationBehavior></local:NumberValidationBehavior>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label x:Name="phoneWarLabel" Text="" IsVisible="False" TextColor="Blue" 
+                       FontSize="15" BackgroundColor="Transparent" />
+
+                <Button x:Name="signUp" Clicked="SignupValidation_ButtonClicked" 
+                        TextColor="White" BorderRadius="30" BorderColor="White" 
+                        BorderWidth="2" VerticalOptions="Center" BackgroundColor="Black"
+                        HorizontalOptions="Center" WidthRequest="250" 
+                        HeightRequest="50" Text="Sign Up"/>
+
+                <Button Clicked="login_ClickedEvent" TextColor="White" BorderRadius="30" BorderColor="White" 
+                        BorderWidth="2" VerticalOptions="Center" BackgroundColor="Black"
+                        HorizontalOptions="Center" WidthRequest="250" 
+                        HeightRequest="50" Text="Login" />
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

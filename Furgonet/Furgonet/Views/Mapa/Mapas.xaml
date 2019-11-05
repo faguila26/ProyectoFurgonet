@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Furgonet;assembly=Furgonet"
+             x:Class="Furgonet.Views.Mapas"
+             Title="Recorrido">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Agregar" 
+                     Clicked="OnDireccionAdded" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <local:CustomMap x:Name="customMap" MapType="Street" 
+                             WidthRequest="300" HeightRequest="300" />
+
+            <ListView x:Name="listaView" BackgroundColor="White" />
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button 
+                        BorderRadius="25"
+                        BackgroundColor="Black"
+                        Text="Cerrar"
+                        TextColor="White"
+                        Clicked="Cerrar_modal">
+                </Button>
+            </StackLayout>
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
